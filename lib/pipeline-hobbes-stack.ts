@@ -15,5 +15,9 @@ export class PipelineHobbesStack extends cdk.Stack {
                 commands: ['npm ci', 'npm run build', 'npx cdk synth']
             })
         });
+
+        pipeline.addStage(new S3HobbesStage(this, "test", {
+            env: { account: '707338571369', region: "us-east-1" }
+        }));
     }
 }
