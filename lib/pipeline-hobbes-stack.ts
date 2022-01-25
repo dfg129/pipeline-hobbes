@@ -9,7 +9,7 @@ export class PipelineHobbesStack extends cdk.Stack {
         const pipeline = new CodePipeline(this, 'PipelineHobbes' {
             pipelineName: 'S3Pipeline',
             synth: new ShellStep('Synth', {
-                input: CodePipelineSource.gitHub('dfg129/s3-eventbridge-hobbes', 'develop'),
+                input: CodePipelineSource.gitHub('dfg129/pipeline-hobbes', 'main'),
                 commands: ['npm ci', 'npm run build', 'npx cdk synth']
             })
         });
