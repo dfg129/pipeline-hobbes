@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
-import { PipelineHobbes } from '../lib/pipeline-hobbes';
+import { PipelineHobbes } from '../lib/pipeline-hobbes-stack';
 
 const app = new cdk.App();
 new PipelineHobbes(app, 'PipelineHobbes', {
